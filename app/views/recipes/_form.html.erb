@@ -2,7 +2,7 @@
   <%= f.label :recipe_name %>
   <%= f.text_field :recipe_name %>
   <%= f.label :ingredients %>
-   <%= f.collection_check_boxes(:ingredient, Ingredient.all, :id, :ingredient_name %>
+   <%= f.collection_check_boxes(:ingredient, :ingredient_ids, Ingredient.all, :id, :ingredient_name %>
   <%= f.submit %>
   
 <% end %>
