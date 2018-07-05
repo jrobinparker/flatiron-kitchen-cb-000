@@ -9,7 +9,7 @@ blueberry_pancakes.save
 # Jake the Dog's Bacon Pancakes Recipe
 # https://www.youtube.com/watch?v=1eO5U_uN7DQ
 
-bacon_pancakes = Recipe.new(name: 'Bacon Pancakes')
+bacon_pancakes = Recipe.new(recipe_name: 'Bacon Pancakes')
 bacon_pancakes_ingredients = ['Some bacon', 'Pancake']
 bacon_pancakes_ingredients.each{|i| bacon_pancakes.ingredients.build(name: i)}
 bacon_pancakes.save
