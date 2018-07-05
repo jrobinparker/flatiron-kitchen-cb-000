@@ -1,9 +1,9 @@
 # Trisha Yearwood's Blueberry Pancakes Recipe
 # http://www.foodnetwork.com/recipes/trisha-yearwood/blueberry-pancakes-recipe.html
 
-blueberry_pancakes = Recipe.new(name: 'Blueberry Pancakes')
+blueberry_pancakes = Recipe.new(recipe_name: 'Blueberry Pancakes')
 blueberry_pancakes_ingredients = ['All-purpose flour', 'Sugar', 'Baking powder', 'Baking soda', 'Salt', 'Large eggs', 'Milk', 'Sour cream', 'Butter', 'Vanilla extract', 'Blueberries', 'Lemon zest']
-blueberry_pancakes_ingredients.each{|i| blueberry_pancakes.ingredients.build(name: i)}
+blueberry_pancakes_ingredients.each{|i| blueberry_pancakes.ingredients.build(ingredients_name: i)}
 blueberry_pancakes.save
 
 # Jake the Dog's Bacon Pancakes Recipe
