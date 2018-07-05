@@ -18,17 +18,17 @@ describe "creating recipes" do
       fill_in 'recipe_name', with: 'Blueberry Pancakes'
       click_button('Create Recipe')
 
-      expect(Recipe.first.name).to eq("Blueberry Pancakes")
+      expect(Recipe.first.recipe_name).to eq("Blueberry Pancakes")
       expect(page).to have_content("Blueberry Pancakes")
     end
 
     # Are there all ingredients listed in the form with
     # the ingredient name as a label and an associated checkbox?
     it "should display all the existing ingredients" do
-      Ingredient.create(name: 'Paprika')
-      Ingredient.create(name: 'Clove')
-      Ingredient.create(name: 'Ginger')
-      Ingredient.create(name: 'Cider')
+      Ingredient.create(ingredient_name: 'Paprika')
+      Ingredient.create(ingredient_name: 'Clove')
+      Ingredient.create(ingredient_name: 'Ginger')
+      Ingredient.create(ingredient_name: 'Cider')
 
       visit new_recipe_path
 
@@ -54,7 +54,7 @@ describe "creating recipes" do
       check('Spam')
       click_button('Create Recipe')
 
-      expect(Recipe.first.ingredients.where(name: 'Spam').count).to eq(1)
+      expect(Recipe.first.ingredients.where(ingredient_name: 'Spam').count).to eq(1)
     end
 
 
@@ -63,10 +63,10 @@ describe "creating recipes" do
     #       implemented HTML label
     #       (i.e. clicking on the <label> checks/unchecks the box).
     it "should create a recipe with many ingredients" do
-      Ingredient.create(name: 'Paprika')
-      Ingredient.create(name: 'Clove')
-      Ingredient.create(name: 'Ginger')
-      Ingredient.create(name: 'Cider')
+      Ingredient.create(ingredient_name: 'Paprika')
+      Ingredient.create(ingredient_name: 'Clove')
+      Ingredient.create(ingredient_name: 'Ginger')
+      Ingredient.create(ingredient_name: 'Cider')
 
       visit new_recipe_path
 
@@ -88,8 +88,8 @@ describe "creating recipes" do
     #       implemented HTML label
     #       (i.e. clicking on the <label> checks/unchecks the box).
     it "should create a recipe with 0 ingredients" do
-      Ingredient.create(name: 'Paprika')
-      Ingredient.create(name: 'Clove')
+      Ingredient.create(ingredient_name: 'Paprika')
+      Ingredient.create(ingredient_name: 'Clove')
 
       visit new_recipe_path
 
